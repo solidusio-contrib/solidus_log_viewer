@@ -3,7 +3,11 @@ Spree Log Viewer
 
 A log viewer for spree
 
-Makes it easy for admin to view logs. Logs are anything in the log_entries table. Currently only the payment model uses it, but the LogEntry is polymorphic so it will work with any other model
+Makes it easy for admin to view logs. Logs are anything in the log_entries table. 
+
+Currently only the payment model uses it, but the LogEntry is polymorphic so it will work with any other model
+
+NOTE: app/views/admin/payments/_list.html.erb is overwritten by this gem
 
 
 Routes
