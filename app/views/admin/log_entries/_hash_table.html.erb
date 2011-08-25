@@ -1,0 +1,13 @@
+<h3><%= title %></h3>
+<table>
+  <tr>
+    <% hash.to_a.sort.each do |key, value| %>
+      <th><%= key.humanize.titleize %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <% hash.to_a.sort.each do |key, value| %>
+      <td><%= value %></td>
+    <% end %>
+  </tr>
+</table>

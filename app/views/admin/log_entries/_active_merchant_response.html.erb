@@ -1,0 +1,25 @@
+<dl>
+  <dt>Authorization Code</dt>
+  <dd><%= response.try(:authorization)%></dd>
+
+  <dt>Mode</dt>
+  <dd><%= response.try(:test?) ? "Test Mode" : "Production Mode"%></dd>
+
+  <% if response.try(:avs_result) %>
+    <dt>Address Verification (AVS)</dt>
+    <dd><%= response.avs_result['message'] %></dd>
+  <% end %>
+
+  <dt>Status</dt>
+  <dd><%= response.try(:success?) ? "Success" : "Failure"%></dd>
+
+  <dt>Mode</dt>
+  <dd><%= response.try(:test?) ? "Test Mode" : "Production Mode"%></dd>
+</dl>
+<details>
+  <summary>More information..</summary>
+
+  <%= render(:partial => 'hash_table', :locals => {:hash => response.avs_result, :title => 'Address Verification (AVS)'}) if response.try(:avs_result) %>
+  <%= render(:partial => 'hash_table', :locals => {:hash => response.cvv_result, :title => 'Card Code Verfication (CVV)'}) if response.try(:cvv_result) %>
+  <%= render(:partial => 'hash_table', :locals => {:hash => response.params, :title => 'More Details'}) if response.try(:params) %>
+</details>

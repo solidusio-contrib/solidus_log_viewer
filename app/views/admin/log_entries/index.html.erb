@@ -1,0 +1,34 @@
+<h1>Logs</h1>
+<table class="index">
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Date</th>
+      <th width="70%">Details</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @log_entries.each do |log_entry| %>
+      <tr>
+        <td><%= log_entry.source_type %></td>
+        <td><%= log_entry.created_at %></td>
+        <td>
+          <% if log_entry.details.present? %>
+            <% object = YAML.load(log_entry.details) %>
+            <% if object.kind_of?(ActiveMerchant::Billing::Response) %>
+              <%= render :partial => 'active_merchant_response', :locals => { :response => object } %>
+            <% else %>
+              <% object.inspect %>
+            <% end %>
+          <% else %>
+            unavailable
+          <% end %>
+        </td>
+        <td><%= link_to("View Payment", admin_order_payments_path(log_entry.source.order)) if log_entry.source.kind_of?(Payment) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @log_entries %>
