@@ -5,6 +5,18 @@ A log viewer for spree
 
 Makes it easy for admin to view logs. Logs are anything in the log_entries table. Currently only the payment model uses it, but the LogEntry is polymorphic so it will work with any other model
 
+
+Routes
+==========
+
+You will get the following route:
+
+`admin_log_entries_path`
+
+You can optionally pass filters:
+
+`admin_log_entries_path(:source_type => 'Payment', :source_id => @payment.id)`
+
 Installation
 =======
 
