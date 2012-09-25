@@ -14,7 +14,7 @@
         <td><%= log_entry.source_type %></td>
         <td><%= log_entry.created_at %></td>
         <td>
-          <% if log_entry.details.present? %>
+          <% if log_entry.details.present? %>ff
             <% object = YAML.load(log_entry.details) %>
             <% if object.kind_of?(ActiveMerchant::Billing::Response) %>
               <%= render :partial => 'active_merchant_response', :locals => { :response => object } %>
