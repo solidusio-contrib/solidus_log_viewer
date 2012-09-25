@@ -1,5 +1,4 @@
 require 'spree_core'
-require 'spree_log_viewer_hooks'
 
 module SpreeLogViewer
   class Engine < Rails::Engine
