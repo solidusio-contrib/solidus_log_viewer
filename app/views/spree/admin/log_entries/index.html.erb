@@ -27,7 +27,7 @@
             unavailable
           <% end %>
         </td>
-        <td><%= link_to("View Payment", admin_order_payments_path(log_entry.source.order)) if log_entry.source.kind_of?(Payment) %></td>
+        <td><%= link_to("View Payment", admin_order_payments_path(log_entry.source.order)) if log_entry.source.kind_of?(Spree::Payment) %></td>
       </tr>
     <% end %>
   </tbody>
