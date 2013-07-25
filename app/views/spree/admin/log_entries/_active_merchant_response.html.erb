@@ -16,10 +16,21 @@
   <dt>Mode</dt>
   <dd><%= response.try(:test?) ? "Test Mode" : "Production Mode"%></dd>
 </dl>
-<details>
-  <summary>More information..</summary>
+  <%= link_to "More Info", '#', id: 'more-info' %>
 
-  <%= render(:partial => 'hash_table', :locals => {:hash => response.avs_result, :title => 'Address Verification (AVS)'}) if response.try(:avs_result) %>
-  <%= render(:partial => 'hash_table', :locals => {:hash => response.cvv_result, :title => 'Card Code Verfication (CVV)'}) if response.try(:cvv_result) %>
-  <%= render(:partial => 'hash_table', :locals => {:hash => response.params, :title => 'More Details'}) if response.try(:params) %>
-</details>
+  <div id="more_info" style="display:none">
+    <%= render(:partial => 'hash_table', :locals => {:hash => response.avs_result, :title => 'Address Verification (AVS)'}) if response.try(:avs_result) %>
+    <%= render(:partial => 'hash_table', :locals => {:hash => response.cvv_result, :title => 'Card Code Verfication (CVV)'}) if response.try(:cvv_result) %>
+    <%= render(:partial => 'hash_table', :locals => {:hash => response.params, :title => 'More Details'}) if response.try(:params) %>
+  </div>
+
+<script>
+  $("#more-info").click(function() { 
+    $("#more_info").dialog({
+      draggable: false, 
+      modal: true,
+      position: ["center","center"], 
+      width: 1020
+    })
+});
+</script>

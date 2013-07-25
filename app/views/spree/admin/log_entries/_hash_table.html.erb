@@ -1,13 +1,21 @@
-<h3><%= title %></h3>
-<table>
-  <tr>
-    <% hash.to_a.sort.each do |key, value| %>
-      <th><%= key.humanize.titleize %></th>
-    <% end %>
-  </tr>
-  <tr>
-    <% hash.to_a.sort.each do |key, value| %>
-      <td><%= value %></td>
-    <% end %>
-  </tr>
-</table>
+<div class="sixteen columns">
+  <h3><%= title %></h3>
+  <table class="index">
+    <thead>
+      <tr>
+        <% hash.to_a.sort.each do |key, value| %>
+          <% next if key.include?('fee') || key.include?('invoice') || key.include?('livemode') %>
+          <th><%= key.humanize.titleize %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% hash.to_a.sort.each do |key, value| %>
+          <% next if key.include?('fee') || key.include?('invoice') || key.include?('livemode') %>
+          <td class="align-center"><%= value %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
