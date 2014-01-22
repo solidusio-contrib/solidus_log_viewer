@@ -34,3 +34,17 @@
 </table>
 
 <%= paginate @log_entries %>
+
+<script>
+  $(".more_info").click(function() {
+    var id = $(this).data('id');
+
+    $("#more_info_" + id).dialog({
+      draggable: false,
+      modal: true,
+      position: ["center","center"],
+      width: 1020
+    })
+    return false;
+  });
+</script>
