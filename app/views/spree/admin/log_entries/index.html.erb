@@ -11,15 +11,15 @@
     </tr>
   </thead>
   <tbody>
-    <% @log_entries.each do |log_entry| %>
+    <% @log_entries.each_with_index do |log_entry, index| %>
       <tr>
         <td><%= log_entry.source_type %></td>
         <td><%= log_entry.created_at %></td>
         <td>
-          <% if log_entry.details.present? %>ff
+          <% if log_entry.details.present? %>
             <% object = YAML.load(log_entry.details) %>
             <% if object.kind_of?(ActiveMerchant::Billing::Response) %>
-              <%= render :partial => 'active_merchant_response', :locals => { :response => object } %>
+              <%= render :partial => 'active_merchant_response', :locals => { :response => object, :index => index } %>
             <% else %>
               <% object.inspect %>
             <% end %>
@@ -37,9 +37,9 @@
 
 <script>
   $(".more_info").click(function() {
-    var id = $(this).data('id');
+    var index = $(this).data('index');
 
-    $("#more_info_" + id).dialog({
+    $("#more_info_" + index).dialog({
       draggable: false,
       modal: true,
       position: ["center","center"],
