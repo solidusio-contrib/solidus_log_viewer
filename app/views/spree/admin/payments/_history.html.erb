@@ -1,0 +1,4 @@
+<td class='align-center'>
+  <%= link_to("history", admin_log_entries_path(:source_type => 'Spree::Payment', :source_id => payment.id))%>
+  (<%= payment.log_entries.count %>)
+</td>
