@@ -31,4 +31,5 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  config.include FeatureHelper, type: :feature
 end
