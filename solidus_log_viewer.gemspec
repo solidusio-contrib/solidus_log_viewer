@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.author            = 'Joshua Nussbaum'
   s.email             = 'josh@godynamo.com'
   s.homepage          = 'https://solidus.io'
+  s.license           = 'BSD-3'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
