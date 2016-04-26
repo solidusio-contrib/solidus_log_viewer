@@ -8,8 +8,7 @@ Gem::Specification.new do |s|
 
   s.author            = 'Joshua Nussbaum'
   s.email             = 'josh@godynamo.com'
-  # s.homepage          = 'http://www.rubyonrails.org'
-  # s.rubyforge_project = 'actionmailer'
+  s.homepage          = 'https://solidus.io'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
