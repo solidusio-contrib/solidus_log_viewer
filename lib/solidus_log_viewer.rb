@@ -1,6 +1,6 @@
 require 'spree_core'
 
-module SpreeLogViewer
+module SolidusLogViewer
   class Engine < Rails::Engine
 
     config.autoload_paths += %W(#{config.root}/lib)

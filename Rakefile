@@ -10,6 +10,6 @@ task :default => [:spec]
 
 desc 'Generates a dummy app for testing'
 task :test_app do
-  ENV['LIB_NAME'] = 'spree_log_viewer'
+  ENV['LIB_NAME'] = 'solidus_log_viewer'
   Rake::Task['extension:test_app'].invoke
 end
