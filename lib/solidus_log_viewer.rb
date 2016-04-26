@@ -1,4 +1,5 @@
 require 'spree_core'
+require 'solidus_log_viewer/version'
 
 module SolidusLogViewer
   class Engine < Rails::Engine
