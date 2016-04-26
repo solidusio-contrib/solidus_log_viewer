@@ -1,9 +1,9 @@
-Spree Log Viewer
+Solidus Log Viewer
 ==============
 
-A log viewer for spree
+A log viewer for Solidus
 
-Makes it easy for admin to view logs. Logs are anything in the log_entries table. 
+Makes it easy for admin to view logs. Logs are anything in the log_entries table.
 
 Currently only the payment model uses it, but the LogEntry is polymorphic so it will work with any other model
 
@@ -26,7 +26,7 @@ Installation
 
 Add this to your `Gemfile`
 
-`gem 'spree_log_viewer', :git => 'git://github.com/DynamoMTL/spree_log_viewer.git'`
+`gem 'solidus_log_viewer', :git => 'git://github.com/DynamoMTL/solidus_log_viewer.git'`
 
 Run bundler
 
