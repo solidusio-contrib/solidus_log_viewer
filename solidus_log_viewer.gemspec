@@ -1,15 +1,20 @@
+# coding: utf-8
+lib = File.expand_path('../lib/', __FILE__)
+$:.unshift lib unless $:.include?(lib)
+
+require 'solidus_log_viewer/version'
+
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_log_viewer'
-  s.version     = '0.70.1'
+  s.name        = 'solidus_log_viewer'
+  s.version     = SolidusLogViewer::VERSION
   s.summary     = 'View log entries in admin'
   s.description = 'Adds the ability to view payment logs in the admin'
   s.required_ruby_version = '>= 1.8.7'
 
   s.author            = 'Joshua Nussbaum'
   s.email             = 'josh@godynamo.com'
-  # s.homepage          = 'http://www.rubyonrails.org'
-  # s.rubyforge_project = 'actionmailer'
+  s.homepage          = 'https://solidus.io'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
