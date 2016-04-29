@@ -1,6 +1,8 @@
 Solidus Log Viewer
 ==============
 
+[![Build Status](https://travis-ci.org/solidusio-contrib/solidus_log_viewer.svg?branch=master)](https://travis-ci.org/solidusio-contrib/solidus_log_viewer)
+
 A log viewer for Solidus
 
 Makes it easy for admin to view logs. Logs are anything in the log_entries table.
