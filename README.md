@@ -28,7 +28,7 @@ Installation
 
 Add this to your `Gemfile`
 
-`gem 'solidus_log_viewer', :git => 'git://github.com/DynamoMTL/solidus_log_viewer.git'`
+`gem 'solidus_log_viewer', github: 'solidusio-contrib/solidus_log_viewer'`
 
 Run bundler
 
