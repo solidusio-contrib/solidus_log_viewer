@@ -29,4 +29,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'factory_girl'
   s.add_development_dependency 'pry-rails'
+  s.add_development_dependency 'capybara-screenshot'
 end
