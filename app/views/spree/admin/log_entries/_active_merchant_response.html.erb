@@ -18,6 +18,27 @@
 </dl>
 
 <% if Spree.respond_to?(:solidus_gem_version) && Spree.solidus_gem_version.release >= Gem::Version.new('1.3') %>
+  <%= link_to "More Info", '#', class: 'more_info', "data-toggle" => "modal", "data-target" => "#more_info_#{index}" %>
+
+  <!-- More Info Modal -->
+  <div class="modal fade" id="more_info_<%= index %>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <%= render(:partial => 'hash_table', :locals => {:hash => response.avs_result, :title => 'Address Verification (AVS)'}) if response.try(:avs_result) %>
+          <%= render(:partial => 'hash_table', :locals => {:hash => response.cvv_result, :title => 'Card Code Verfication (CVV)'}) if response.try(:cvv_result) %>
+          <%= render(:partial => 'hash_table', :locals => {:hash => response.params, :title => 'More Details'}) if response.try(:params) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // Bootstrap modals need to be appended to body to display correctly
+  // This is a hacky script as an alternative to using Deface to get there
+  document.body.appendChild(document.getElementById("more_info_<%= index %>"));
+  </script>
+
 <% else %>
 
   <%= link_to "More Info", '#', class: 'more_info', 'data-index' => index %>
