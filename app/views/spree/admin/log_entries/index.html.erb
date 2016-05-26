@@ -35,6 +35,7 @@
 
 <%= paginate @log_entries %>
 
+<% unless Spree.respond_to?(:solidus_gem_version) && Spree.solidus_gem_version.release >= Gem::Version.new('1.3') %>
 <script>
   $(".more_info").click(function() {
     var index = $(this).data('index');
@@ -48,3 +49,4 @@
     return false;
   });
 </script>
+<% end %>

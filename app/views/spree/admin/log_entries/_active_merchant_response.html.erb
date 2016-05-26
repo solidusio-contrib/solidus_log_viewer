@@ -16,10 +16,14 @@
   <dt>Mode</dt>
   <dd><%= response.try(:test?) ? "Test Mode" : "Production Mode"%></dd>
 </dl>
-  <%= link_to "More Info", '#', class: 'more_info', 'data-index' => index %>
 
+<% if Spree.respond_to?(:solidus_gem_version) && Spree.solidus_gem_version.release >= Gem::Version.new('1.3') %>
+<% else %>
+
+  <%= link_to "More Info", '#', class: 'more_info', 'data-index' => index %>
   <div id="more_info_<%= index %>" style="display:none">
     <%= render(:partial => 'hash_table', :locals => {:hash => response.avs_result, :title => 'Address Verification (AVS)'}) if response.try(:avs_result) %>
     <%= render(:partial => 'hash_table', :locals => {:hash => response.cvv_result, :title => 'Card Code Verfication (CVV)'}) if response.try(:cvv_result) %>
     <%= render(:partial => 'hash_table', :locals => {:hash => response.params, :title => 'More Details'}) if response.try(:params) %>
   </div>
+<% end %>
