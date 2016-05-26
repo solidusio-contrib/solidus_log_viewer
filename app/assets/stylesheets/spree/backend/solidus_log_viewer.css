@@ -1,0 +1,8 @@
+/*
+*= require jquery-ui/dialog
+*/
+
+/* Although jQuery UI is still available in the backend, it's not very well supported */
+.ui-front {
+  z-index: 10000;
+}
