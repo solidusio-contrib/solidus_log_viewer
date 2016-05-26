@@ -18,5 +18,9 @@ RSpec.feature 'Payment History', js: true do
     click_link 'history'
     expect(page).to have_text('Log Entries')
     expect(page).to have_text(Spree::LogEntry.first.created_at)
+
+    expect(page).not_to have_text('CVV')
+    click_link 'More Info'
+    expect(page).to have_text('CVV')
   end
 end
