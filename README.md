@@ -1,7 +1,7 @@
 Solidus Log Viewer
 ==============
 
-[![Build Status](https://travis-ci.org/solidusio-contrib/solidus_log_viewer.svg?branch=master)](https://travis-ci.org/solidusio-contrib/solidus_log_viewer)
+[![CircleCI](https://circleci.com/gh/solidusio-contrib/solidus_log_viewer.svg?style=svg)](https://circleci.com/gh/solidusio-contrib/solidus_log_viewer)
 
 A log viewer for Solidus
 
