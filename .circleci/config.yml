@@ -12,10 +12,15 @@ jobs:
     executor: solidusio_extensions/postgres
     steps:
       - solidusio_extensions/run-tests
+      - store_artifacts:
+          path: spec/dummy/tmp/capybara
+
   run-specs-with-mysql:
     executor: solidusio_extensions/mysql
     steps:
       - solidusio_extensions/run-tests
+      - store_artifacts:
+          path: spec/dummy/tmp/capybara
 
 workflows:
   "Run specs on supported Solidus versions":
