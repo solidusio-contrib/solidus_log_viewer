@@ -16,12 +16,13 @@ Gem::Specification.new do |s|
   s.email             = 'josh@godynamo.com'
   s.homepage          = 'https://solidus.io'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.files        = `git ls-files`.split("\n")
+  s.test_files   = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
   s.add_dependency 'solidus_backend', ['>= 1.3', '< 3']
+
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'database_cleaner'
   s.add_development_dependency 'rspec-rails'
@@ -30,4 +31,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'factory_bot'
   s.add_development_dependency 'capybara-screenshot'
+  s.add_development_dependency 'solidus_support'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'selenium-webdriver'
 end
