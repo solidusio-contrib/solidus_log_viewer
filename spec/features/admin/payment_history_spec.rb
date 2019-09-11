@@ -4,6 +4,7 @@ RSpec.feature 'Payment History', js: true do
   let!(:order) { create(:completed_order_with_pending_payment) }
 
   before :each do
+    page.driver.browser.manage.window.maximize
     login_as_admin
   end
 
