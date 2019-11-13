@@ -1,4 +1,6 @@
 require 'spree_core'
+require 'deface'
+
 require 'solidus_log_viewer/version'
 
 module SolidusLogViewer
