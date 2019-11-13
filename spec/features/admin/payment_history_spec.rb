@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-RSpec.feature 'Payment History', js: true do
+RSpec.describe 'Payment History', js: true do
   let!(:order) { create(:completed_order_with_pending_payment) }
 
-  before :each do
+  before do
     page.driver.browser.manage.window.maximize
     login_as_admin
   end
