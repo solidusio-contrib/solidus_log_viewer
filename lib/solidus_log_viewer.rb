@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 require 'spree_core'
+require 'deface'
+
 require 'solidus_log_viewer/version'
 
 module SolidusLogViewer
   class Engine < Rails::Engine
-
     config.autoload_paths += %W(#{config.root}/lib)
 
     def self.activate
@@ -12,6 +15,6 @@ module SolidusLogViewer
       end
     end
 
-    config.to_prepare &method(:activate).to_proc
+    config.to_prepare(&method(:activate).to_proc)
   end
 end

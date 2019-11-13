@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FeatureHelper
   def login_as_admin
     admin = create(:admin_user, password: 'test123', password_confirmation: 'test123')
@@ -7,4 +9,8 @@ module FeatureHelper
     click_button 'Login'
     admin
   end
+end
+
+RSpec.configure do |config|
+  config.include FeatureHelper, type: :feature
 end
